@@ -60,29 +60,9 @@ if location_bin is not None:
         furnished = convert_furnished_status(furnished)
 
         # Prepare the feature vector
-        input_data = {
-            'location': [location],
-            'property_type': [property_type],
-            'rooms': [rooms],
-            'size': [size],
-            'furnished': [furnished],
-            'region': [region],
-            'Gymnasium': [gymnasium],
-            'Air-Cond': [air_cond],
-            'Washing Machine': [washing_machine],
-            'Swimming Pool': [swimming_pool],
-            'location_bin': [location_bin]
-        }
-
-        # Create a DataFrame
-        input_df = pd.DataFrame(input_data)
-
-        # Add any necessary preprocessing steps here to match the training phase
-        # For example: Encoding categorical variables, scaling numerical features, etc.
-        # Assume we have a preprocessing pipeline saved as 'preprocessing_pipeline.joblib'
-        preprocessing_pipeline = joblib.load('preprocessing_pipeline.joblib')
-        input_df_processed = preprocessing_pipeline.transform(input_df)
+        input_data = np.array([[location, property_type, rooms, size, furnished, region,
+                                gymnasium, air_cond, washing_machine, swimming_pool, location_bin]])
 
         # Make prediction
-        prediction = model.predict(input_df_processed)
+        prediction = model.predict(input_data)
         st.write(f'Predicted Monthly Rent: ${prediction[0]:.2f}')
