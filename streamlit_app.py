@@ -36,11 +36,11 @@ st.write('Enter the property details to predict the monthly rent.')
 
 # Input fields
 location = st.selectbox('Location', options=list(mean_rent_by_location.keys()))
-property_type = st.selectbox('Property Type', ['Condominium', 'Apartment', 'Service Residence', 'Studio', 'Flat', 'Duplex', 'Others', 'Townhouse Condo'])
+#property_type = st.selectbox('Property Type', ['Condominium', 'Apartment', 'Service Residence', 'Studio', 'Flat', 'Duplex', 'Others', 'Townhouse Condo'])
 rooms = st.number_input('Number of Rooms', min_value=1, max_value=10, step=1)
 size = st.number_input('Size (sqft)', min_value=300, max_value=3000, step=10)
 furnished = st.selectbox('Furnished', ['Not Furnished', 'Partially Furnished', 'Fully Furnished'])
-region = st.selectbox('Region', ['Kuala Lumpur', 'Selangor'])
+#region = st.selectbox('Region', ['Kuala Lumpur', 'Selangor'])
 gymnasium = st.selectbox('Gymnasium', ['Yes', 'No'])
 air_cond = st.selectbox('Air-Conditioning', ['Yes', 'No'])
 washing_machine = st.selectbox('Washing Machine', ['Yes', 'No'])
@@ -61,8 +61,8 @@ if location_bin is not None:
         furnished = convert_furnished_status(furnished)
 
         # Prepare the feature vector
-        input_data = np.array([[location, property_type, rooms, size, furnished, region,
-                                gymnasium, air_cond, washing_machine, swimming_pool, location_bin]])
+        #input_data = np.array([[location, property_type, rooms, size, furnished, region,gymnasium, air_cond, washing_machine, swimming_pool, location_bin]])
+        input_data = np.array([[location, rooms, size, furnished, gymnasium, air_cond, washing_machine, swimming_pool, location_bin]])
 
         print("start predict....")
         print(input_data)
