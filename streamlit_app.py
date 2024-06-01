@@ -70,8 +70,18 @@ if location_bin is not None:
         # Convert to DataFrame
         input_df = pd.DataFrame(input_data)
 
+        # Print the columns of input_df
+        print("Columns before one-hot encoding:", input_df.columns)
+
         # One-hot encode categorical variables
         input_df = pd.get_dummies(input_df, columns=['location', 'property_type', 'region'])
+
+        # Print the columns of input_df after one-hot encoding
+        print("Columns after one-hot encoding:", input_df.columns)
+
+        # One-hot encode categorical variables
+        input_df = pd.get_dummies(input_df, columns=['location', 'property_type', 'region'])
+        
         
         print("start predict....") 
         # Make prediction
