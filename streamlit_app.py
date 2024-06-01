@@ -52,7 +52,7 @@ location_bin = map_location_to_bin(location, mean_rent_by_location, bin_edges)
 if location_bin is not None:
     # Prediction
     if st.button('Predict'):
-        print("start predict....")
+        
         # Convert 'Yes'/'No' inputs to 1/0
         gymnasium = convert_yes_no(gymnasium)
         air_cond = convert_yes_no(air_cond)
@@ -64,6 +64,8 @@ if location_bin is not None:
         input_data = np.array([[location, property_type, rooms, size, furnished, region,
                                 gymnasium, air_cond, washing_machine, swimming_pool, location_bin]])
 
+        print("start predict....")
+        print(input_data)
         # Make prediction
         prediction = model.predict(input_data)
         st.write(f'Predicted Monthly Rent: ${prediction[0]:.2f}')
