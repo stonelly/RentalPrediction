@@ -57,6 +57,7 @@ if location_bin is not None:
         air_cond = convert_yes_no(air_cond)
         washing_machine = convert_yes_no(washing_machine)
         swimming_pool = convert_yes_no(swimming_pool)
+        furnished = convert_furnished_status(furnished)
 
         # Prepare the feature vector
         input_data = np.array([[location, property_type, rooms, size, furnished, region,
