@@ -1,0 +1,4 @@
+streamlit
+rentalPredictXgb
+joblib
+numpy
