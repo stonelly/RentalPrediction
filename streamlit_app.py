@@ -66,6 +66,14 @@ if location_bin is not None:
 
         print("start predict....")
         print(input_data)
+
+        # Convert to DataFrame
+        input_df = pd.DataFrame(input_data)
+
+        # One-hot encode categorical variables
+        input_df = pd.get_dummies(input_df, columns=['location', 'property_type', 'region'])
+        
+        print("start predict....") 
         # Make prediction
         prediction = model.predict(input_data)
         st.write(f'Predicted Monthly Rent: ${prediction[0]:.2f}')
