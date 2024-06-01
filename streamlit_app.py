@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 
 # Load the trained model and bin edges
-model = joblib.load('rentalPredictXgb.joblib')
+model = joblib.load('rentalPredictRFR.joblib')
 bin_edges, mean_rent_by_location = joblib.load('bin_edges_and_mean_rent.pkl')
 
 # Function to map location to bin
