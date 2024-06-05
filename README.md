@@ -8,6 +8,8 @@ This project aims to predict rental prices in Klang Valley, Malaysia, using vari
 - The Original source is from Real estate listings from [Mudah.my](https://www.mudah.my/malaysia/properties-for-rent#lm=1)
 - The dataset obtained from the Kaggle website titles “Rent Pricing Kuala Lumpur Malaysia”
 
+# Web Application
+- Can see the sample at Streamlit: https://rentalprediction-5epnx3iwcggzwfhzvnsgva.streamlit.app/
 
 ## Setup
 1. Clone the repository: `git clone https://github.com/stonelly/RentalPrediction.git`
