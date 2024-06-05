@@ -275,7 +275,7 @@ label_encoder = LabelEncoder()
 label_encoder.fit(data['property_type'])
 
 # Train the model
-model = joblib.load('RF_model.pkl')
+model = joblib.load('v2_rental_prediction_model.pkl')
 
 # Rental Price prediction form
 with st.form('predict'):
