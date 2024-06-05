@@ -13,7 +13,7 @@ st.info('This is a rental price prediction mainly based in KL & Selangor area. F
 # Load data
 @st.cache_data
 def load_data():
-    return pd.read_csv('/data/cleaned_data.csv').copy()  # Make a copy of the DataFrame to avoid mutation
+    return pd.read_csv('data/cleaned_data.csv').copy()  # Make a copy of the DataFrame to avoid mutation
 
 # Function to map 'Yes' or 'No' to 1 or 0
 def map_yes_no_to_binary(value):
